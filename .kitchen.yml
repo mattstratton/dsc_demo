@@ -1,16 +1,18 @@
 ---
-driver:
-  name: vagrant
+driver_plugin: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
 
 platforms:
-  - name: ubuntu-12.04
-  - name: centos-6.4
+- name: windows2012r2_cloud
+  driver_config:
+    box: windows2012r2_cloud
+    box_url: https://s3.amazonaws.com/box-cutter-us-east-1-cloudtrail/windows/virtualbox4.3.12/win2012r2-datacenter-chef11.12.8.box
+    guest: :windows
 
 suites:
-  - name: default
-    run_list:
-      - recipe[dsc_demo::default]
-    attributes:
+- name: default
+  run_list:
+    - 'recipe[dsc_demo::default]'
+  attributes:
