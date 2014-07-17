@@ -6,9 +6,9 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-# Install DSC-Server feature because otherwise nothing will work
-
-windows_feature 'DSC-Server' do
-    action :install
-    all true
+#
+dsc_resource 'install DSC Pull Server' do
+    resource_name :windowsfeature
+    property :name, "DSC-Service"
+    property :ensure, 'Present'
 end
