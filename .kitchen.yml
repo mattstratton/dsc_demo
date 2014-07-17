@@ -5,9 +5,9 @@ provisioner:
   name: chef_zero
 
 platforms:
-- name: win2012r2-standard-cheflatest
+- name: windows2012r2_cloud
   driver_config:
-    box: win2012r2-standard-cheflatest
+    box: windows2012r2_cloud
     box_url: https://s3.amazonaws.com/box-cutter-us-east-1-cloudtrail/windows/virtualbox4.3.12/win2012r2-datacenter-chef11.12.8.box
     guest: :windows
 

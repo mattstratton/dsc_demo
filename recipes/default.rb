@@ -7,8 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 #
-dsc_resource 'install DSC Pull Server' do
-    resource_name :windowsfeature
-    property :name, "DSC-Service"
-    property :ensure, 'Present'
+include_recipe "powershell::powershell5"
+
+dsc_resource "DSC-Service" do
+    resource_name 'windowsfeature'
+    property :name, 'DSC-Service'
+    property :ensure, 'present'
 end
